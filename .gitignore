@@ -1,0 +1,19 @@
+# --- ユーザー固有の設定（公開しない）
+config/log-sources.local.json
+config/writing-config.md
+config/system-config.md
+
+# --- 生成物・ユーザーデータ（公開しない）
+data/
+reports/weekly/
+reports/published/
+
+# --- Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# --- OS
+.DS_Store
+Thumbs.db

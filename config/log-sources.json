@@ -1,0 +1,15 @@
+{
+  "paths": {
+    "db_dir": "data/logs/db",
+    "daily_dir": "data/logs/daily"
+  },
+  "sources": {
+    "claude_code_projects": { "patterns": [] },
+    "claude_code_history":  { "patterns": [] },
+    "codex_cli":            { "patterns": [] },
+    "codex_desktop_bridge": { "patterns": [] },
+    "gemini_cli":           { "patterns": [] },
+    "copilot_cli":          { "patterns": [] },
+    "antigravity":          { "patterns": [] }
+  }
+}

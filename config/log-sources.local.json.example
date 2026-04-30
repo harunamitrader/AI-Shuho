@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "claude_code_projects": {
+      "patterns": [
+        "C:\\Users\\YOUR_NAME\\.claude\\projects\\**\\*.jsonl"
+      ]
+    },
+    "claude_code_history": {
+      "patterns": [
+        "C:\\Users\\YOUR_NAME\\.claude\\history.jsonl"
+      ]
+    },
+    "codex_cli": {
+      "patterns": [
+        "C:\\Users\\YOUR_NAME\\.codex\\sessions\\**\\*.jsonl"
+      ]
+    },
+    "gemini_cli": {
+      "patterns": [
+        "C:\\Users\\YOUR_NAME\\.gemini\\tmp\\*\\chats\\session-*.json"
+      ]
+    }
+  }
+}

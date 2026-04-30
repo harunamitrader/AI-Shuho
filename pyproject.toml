@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai_shuho"
+version = "0.1.0"
+description = "Weekly AI activity report generator with X-ready post splitting."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "harunamitrader" }
+]
+keywords = ["ai", "weekly", "report", "logs", "codex", "gemini", "claude", "x"]
+
+[tool.setuptools]
+packages = ["ai_shuho"]
