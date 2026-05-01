@@ -369,9 +369,13 @@ Markdown 形式。構成：
 ```
 ユーザー: /ai-shuho-ingest
     ↓
-AI: config/log-sources.local.json を読む
-    ↓
-AI: ユーザーに取得元・対象期間を確認
+AI: config/log-sources.local.json が存在するか確認
+    ↓ 存在しない or パスが空の場合
+AI: 各 AI ツールのデフォルト保存場所を自動探索（OS 検出 → コマンド実行）
+AI: 見つかったツールの一覧とパスパターンをユーザーに提示・確認
+AI: 確認済み内容で log-sources.local.json を書き込む
+    ↓ 既存設定がある場合はそのまま利用（再スキャンも可）
+AI: ユーザーに取得元・除外週を確認
     ↓
 AI: python -m ai_shuho logs-ingest
     ↓

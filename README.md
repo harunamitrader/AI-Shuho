@@ -2,14 +2,11 @@
 
 Claude Code・Codex CLI・Gemini CLI などの AI ツールの使用記録を自動で集め、週報を作成するツールです。
 
-作った週報は X（Twitter）投稿用に 140 字ずつ自動分割されます。
-
 ## できること
 
 - 複数の AI ツールのログを一か所に集める（差分のみ処理するので 2 回目以降は速い）
 - 週ごとの活動サマリーを素材として整理する
 - AI ごとのキャラクター・文体を設定して週報を自動執筆する
-- X（Twitter）投稿用に 140 字単位で分割する
 - バリデーション → 公開まで一気通貫で行う
 
 ## 対応 AI ツール
@@ -49,30 +46,16 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-### 2. ログの場所を設定する
+### 2. ログの場所を設定する（スキップ可）
+
+ログの保存場所は、後述の `/ai-shuho-ingest` スキルを実行すると AI が自動で探してくれます。  
+手動で設定したい場合は以下の手順で `config/log-sources.local.json` を作成してください。
 
 ```bash
 cp config/log-sources.local.json.example config/log-sources.local.json
 ```
 
-`config/log-sources.local.json` を開き、各 AI ツールのログファイルがある場所を書きます。
-
-```json
-{
-  "sources": {
-    "claude_code_projects": {
-      "patterns": ["C:\\Users\\あなたのユーザー名\\.claude\\projects\\**\\*.jsonl"]
-    },
-    "codex_cli": {
-      "patterns": ["C:\\Users\\あなたのユーザー名\\.codex\\sessions\\**\\*.jsonl"]
-    },
-    "gemini_cli": {
-      "patterns": ["C:\\Users\\あなたのユーザー名\\.gemini\\tmp\\*\\chats\\session-*.json"]
-    }
-  }
-}
-```
-
+`config/log-sources.local.json` を開き、各 AI ツールのログファイルがある場所を書きます。  
 使っていないツールは書かなくて構いません。
 
 ---
@@ -133,11 +116,11 @@ Claude Code または AI ツールに入力：
 /ai-shuho-ingest
 ```
 
-AI が以下を確認してきます：
+AI がパソコン上の標準的な保存場所を自動で調べて、見つかったログを一覧表示します。
 
-> 「ログを取得する AI ツールはこれでよいですか？対象期間と除外したい週があれば教えてください。」
+> 「以下の AI ツールのログが見つかりました。取得対象はこれでよいですか？除外したいものや追加したいパスがあれば教えてください。」
 
-問題なければそのまま進めます。完了すると `reports/weekly/YYYY-WNN-ai-shuho-materials.json` が作られます。
+確認後にログを取り込みます。完了すると `reports/weekly/YYYY-WNN-ai-shuho-materials.json` が作られます。
 
 #### Step 2: 文体・AI キャラクターを設定する
 
@@ -203,14 +186,14 @@ period_unit: custom
 period_days: 3
 period_id_format: "YYYY-MM-DD"
 
-# Threads 向け 500 字に変える
-split_char_limit: 500
-
 # 長文週報を出力しない
 draft_output: false
+
+# X/Threads 向け投稿分割の文字数を変える（デフォルト: 140）
+split_char_limit: 500
 ```
 
-デフォルトは週次（月曜 03:00 切り替え）・140 字分割です。
+デフォルトは週次（月曜 03:00 切り替え）です。週報は X（Twitter）投稿用に 140 字単位での分割も行われます（`split_enabled: false` で無効化可能）。
 
 ---
 
