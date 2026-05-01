@@ -1,6 +1,12 @@
 # AI-Shuho
 
+![AI-Shuho](docs/header.png)
+
 Claude Code・Codex CLI・Gemini CLI などの AI ツールの使用記録を自動で集め、週報を作成するツールです。
+
+週報の出力例: [harunami の AI 週報](https://harunamitrader.github.io/harunami_AI_base/my-tools.html#tab-ai-shuho)
+
+![概要](docs/overview.png)
 
 ## できること
 
