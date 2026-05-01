@@ -4,10 +4,6 @@
 
 Claude Code・Codex CLI・Gemini CLI などの AI ツールの使用記録を自動で集め、週報を作成するツールです。
 
-週報の出力例: [harunami の AI 週報](https://harunamitrader.github.io/harunami_AI_base/my-tools.html#tab-ai-shuho)
-
-![概要](docs/overview.png)
-
 ## できること
 
 - 複数の AI ツールのログを一か所に集める（差分のみ処理するので 2 回目以降は速い）
@@ -15,6 +11,10 @@ Claude Code・Codex CLI・Gemini CLI などの AI ツールの使用記録を自
 - AI ごとのキャラクター・文体を設定して週報を自動執筆する
 - バリデーション → 公開まで一気通貫で行う
 - X（Twitter）投稿用に 140 字単位で自動分割する（オプション）
+
+![概要](docs/overview.png)
+
+週報の出力例: [harunami の AI 週報](https://harunamitrader.github.io/harunami_AI_base/my-tools.html#tab-ai-shuho)
 
 ## 対応 AI ツール
 
